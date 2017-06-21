@@ -1,5 +1,9 @@
 # datepicker
 日历插件<br>
-datepicker('datepicker',{begin: new Date()},function(time){<br>
-  console.log(time)<br>
-});
+```javascript
+  datepicker('datepicker',{
+    begin: new Date()
+  },function(time){
+    console.log(time);
+  });
+```
