@@ -1,4 +1,4 @@
-var datepicker = function(id, option, callback) {
+var datepicker = function(id, option) {
     var event,
     MONTHDAYS = [31,28,31,30,31,30,31,31,30,31,30,31], 
     coverId = '',
@@ -13,7 +13,8 @@ var datepicker = function(id, option, callback) {
         disableAfter: '',  //禁止之后的时间
         type: 1, //日历类型 2为双日历可选择日历范围 默认单日历
         autoClose: true, //选择日期之后是否自动关闭日历框，默认自动关闭
-        format: 'YYYY-MM-DD' //时间格式 默认YYYY-MM-DD
+        format: 'YYYY-MM-DD', //时间格式 默认YYYY-MM-DD
+        callback: '' //回调函数
     },
     isLeap=function(date){
         var y=+date.getFullYear();
@@ -183,7 +184,7 @@ var datepicker = function(id, option, callback) {
                             initData();
                             changeBegin = '';
                         }
-                        callback&&callback({begin:options.begin, end:options.end});
+                        options.callback&&options.callback({begin:options.begin, end:options.end});
                     }
                 }else{
                     options.autoClose&&hide();
@@ -192,7 +193,7 @@ var datepicker = function(id, option, callback) {
                         options.begin = new Date(changeTime);
                         initData();
                     }
-                    callback&&callback(initTime(changeTime));
+                    options.callback&&options.callback(initTime(changeTime));
                 }
             }
         }
