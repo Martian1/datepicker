@@ -1,8 +1,8 @@
 # datepicker
 日历插件<br><br>
-##参数说明<br>
+## 参数说明<br>
 id: 必须，绑定日历的input元素<br><br>
-###option 参数,选填<br>
+### option 参数,选填<br>
 　begin 默认开始时间<br>
 　end 默认结束时间,type==2的时候有用<br>
 　disableBefore 禁止此时间之前的时间<br>
