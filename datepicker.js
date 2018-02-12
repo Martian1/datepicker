@@ -1,3 +1,19 @@
+/**
+ * @file datepicker.js
+ * @author zhaoqing07
+ *
+ * @param {string} id 必须，绑定日历的input元素
+ * @param {Object=} option 参数说明
+ * @param {string=} option.type 日历类型 2为双日历可选择日历范围 默认单日历
+ * @param {string | dateObject=} option.begin 初始开始时间,默认今天
+ * @param {string | dateObject=} option.end 初始结束时间,type==2的时候有用
+ * @param {string | dateObject=} option.disableBefore 禁止此时间之前的时间
+ * @param {string | dateObject=} option.disableAfter 禁止之后的时间
+ * @param {boolean=} option.autoClose 选择日期之后是否自动关闭日历框，默认自动关闭
+ * @param {string=} option.format 时间格式 默认YYYY-MM-DD
+ * @param {Function=} option.callback 回调函数
+ **/
+
 (function (global) {
     function Datepicker(id, option) {
         if (!id) {
